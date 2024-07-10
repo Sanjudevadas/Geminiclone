@@ -18,14 +18,31 @@ setResultdata(prev=>prev+nextWord)
 
   };
 
+  const newChat = ()=>{
+    setLoading(false)
+    setShowresult(false)
+  }
+
   const onSent = async (prompt) => {
     setResultdata("");
     setLoading(true);
     setShowresult(true);
-    setRecentprompt(input);
-    const response = await run(input);
+    let response;
+   if(prompt !== undefined){
+response= await run(prompt)
+setRecentprompt(prompt)
+   }
+   else
+   {
+    setPrevprompt(prev=>[...prev,input])
+  setRecentprompt(input) 
+  response= await run(input)
+  
+  }
+
+
     let responseArray = response.split("**");
-    let newResponse;
+    let newResponse=" ";
     for(let i=0;i <responseArray.length;i++){
      if(i ===0 || i%2 !== 1){
         newResponse +=responseArray[i];
@@ -56,6 +73,7 @@ setResultdata(prev=>prev+nextWord)
     resultdata,
     input,
     setInput,
+    newChat
   };
 
   return (
