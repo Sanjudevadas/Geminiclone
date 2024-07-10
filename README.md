@@ -15,7 +15,7 @@ A feature-rich Google Gemini clone built using React and Vite, with the Gemini A
 - [Screenshots](#screenshots)
 
 ## Demo
-Check out the live demo: [Google Gemini Clone Demo](https://your-demo-link.com)
+Check out the live demo: [Google Gemini Clone Demo](https://geminiclone-eight.vercel.app/)
 
 ## Features
 - **User Authentication** (Sign Up, Login, Logout) currently it is not enabled will do it soon
